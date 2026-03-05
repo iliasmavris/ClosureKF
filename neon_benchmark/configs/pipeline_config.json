@@ -1,0 +1,35 @@
+{
+  "site_code": "BARC",
+  "site_name": "Barco Lake, FL",
+  "water_temp_product": "DP1.20264.001",
+  "par_product": "DP1.00024.001",
+  "buoy_air_product": "DP1.20271.001",
+  "wind_product": "DP1.00001.001",
+  "year_months": ["2022-06", "2022-07", "2022-08"],
+  "dt_seconds": 1800,
+  "seeds": [1, 2, 3],
+  "stage1": {
+    "epochs": 200,
+    "lr": 0.01,
+    "patience": 30,
+    "sched_patience": 10
+  },
+  "stage2": {
+    "epochs": 150,
+    "lr": 0.005,
+    "patience": 30,
+    "sched_patience": 10
+  },
+  "gate": {
+    "tau_nll": 0.001,
+    "rel_var_threshold": 0.05
+  },
+  "refit": {
+    "max_epochs": 100,
+    "patience": 20
+  },
+  "train_frac": 0.7,
+  "val_frac": 0.15,
+  "test_frac": 0.15,
+  "horizon_targets_hours": [0.5, 1.0, 2.0, 6.0, 12.0, 24.0]
+}

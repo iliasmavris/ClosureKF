@@ -1,0 +1,65 @@
+{
+  "site": "BARC",
+  "source": "NEON API (4 real products)",
+  "products": {
+    "water_temp": "DP1.20264.001",
+    "par": "DP1.00024.001",
+    "buoy_air": "DP1.20271.001",
+    "wind": "DP1.00001.001"
+  },
+  "year_months": [
+    "2022-06",
+    "2022-07",
+    "2022-08"
+  ],
+  "dt_seconds": 1800,
+  "time_range": [
+    "2022-06-01 00:00:00+00:00",
+    "2022-08-31 23:30:00+00:00"
+  ],
+  "n_total": 4236,
+  "n_train": 2965,
+  "n_val": 635,
+  "n_test": 636,
+  "processed_csv": "C:\\Users\\Workstation 2\\Desktop\\2026 research\\full code old  state space claude code\\neon_benchmark\\data\\processed\\neon_BARC_processed.csv",
+  "processed_sha256": "944e5f94127a4f152acd3a4b2eb99c11c70ae45fb3096bd0f7fcadab954deacd",
+  "split_hashes": {
+    "train": "82c62b565bf04dee7686fd645dba1b8f09700cd78442c16bfb9cfbe9e7b0e7ba",
+    "val": "d8e6638aa64fbcf3b074ace891484355122fff632b95dbd72a12bb4a33093e16",
+    "test": "22f3b18011817ccda7262be8d5a874f66a5b2fb70d379e82a1f35ac4b8fe3ee7"
+  },
+  "columns": [
+    "timestamp",
+    "time_delta",
+    "water_temp",
+    "air_temp",
+    "wind_speed",
+    "par"
+  ],
+  "stats": {
+    "water_temp": {
+      "mean": 31.540007082152968,
+      "std": 0.7646048434687375,
+      "min": 29.28,
+      "max": 34.34
+    },
+    "air_temp": {
+      "mean": 27.032695467422098,
+      "std": 3.2360911487927346,
+      "min": 19.376,
+      "max": 36.317
+    },
+    "wind_speed": {
+      "mean": 1.058746458923513,
+      "std": 0.7133307218258322,
+      "min": 0.14,
+      "max": 4.38
+    },
+    "par": {
+      "mean": 524.0794145420209,
+      "std": 675.4750884823741,
+      "min": 0.02,
+      "max": 2280.66
+    }
+  }
+}

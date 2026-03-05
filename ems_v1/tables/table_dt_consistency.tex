@@ -1,0 +1,17 @@
+\begin{table}[htbp]
+  \centering
+  \caption{Sampling-rate consistency: 10\,Hz trained model
+    evaluated at 10\,Hz and 50\,Hz (zero-shot transfer),
+    and 50\,Hz-retrained model.  Three seeds for the first
+    two rows; single seed for the retrained model.}
+  \label{tab:dt_consistency}
+  \begin{tabular}{lcccc}
+    \toprule
+    Configuration & $d_2$ (\si{m^{-1}}) & $\dxRsq$ ($\tau{=}1$\,s) & NIS & ACF(1) \\
+    \midrule
+    10\,Hz trained (3-seed) & $+2.229 \pm 0.092$ & $+0.168 \pm 0.010$ & $+0.422 \pm 0.045$ & $+0.580 \pm 0.027$ \\
+    50\,Hz transfer (3-seed) & (frozen) & $+0.216 \pm 0.015$ & $+0.229 \pm 0.040$ & $+0.680 \pm 0.054$ \\
+    50\,Hz retrained (1-seed) & $1.440$ & $+0.216$ & $0.287$ & $0.593$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}

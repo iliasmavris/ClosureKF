@@ -1,0 +1,17 @@
+probes
+{
+    type            probes;
+    libs            (fieldFunctionObjects);
+    writeControl    timeStep;
+    writeInterval   1;
+
+    fields          (U p);
+
+    probeLocations
+    (
+        (1.5 0.005 0.005)
+        (1.5 0.010 0.005)
+        (1.5 0.020 0.005)
+        (1.5 0.040 0.005)
+    );
+}

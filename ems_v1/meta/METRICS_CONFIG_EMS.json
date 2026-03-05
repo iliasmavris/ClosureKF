@@ -1,0 +1,151 @@
+{
+  "_comment": "Machine-readable metric spec for EM&S evaluation. Freeze #1, 2026-02-16.",
+  "_companion": "ems_v1/meta/METRICS_FREEZE_1.md",
+
+  "sampling_rates": {
+    "10hz": {
+      "dt": 0.1,
+      "data_path": "processed_data_10hz_clean_v1",
+      "files": {
+        "train": "train_10hz_ready.csv",
+        "val": "val_10hz_ready.csv",
+        "test": "test_10hz_ready.csv"
+      }
+    },
+    "50hz": {
+      "dt": 0.02,
+      "data_path": "processed_data_50hz_clean_v1",
+      "files": {
+        "train": "train_50hz_ready.csv",
+        "val": "val_50hz_ready.csv",
+        "test": "test_50hz_ready.csv"
+      }
+    }
+  },
+
+  "training": {
+    "stage1": {
+      "L_hist": 512,
+      "H_max": 128,
+      "batch_size": 64,
+      "max_epochs": 100,
+      "lr": 0.01,
+      "patience": 20,
+      "scheduler_factor": 0.5,
+      "scheduler_patience": 10
+    },
+    "stage2": {
+      "L_hist": 64,
+      "H_max": 20,
+      "batch_size": 128,
+      "max_epochs": 200,
+      "lr": 0.01,
+      "patience": 30,
+      "scheduler_factor": 0.5,
+      "scheduler_patience": 10
+    }
+  },
+
+  "warmup": {
+    "duration_seconds": 50.0,
+    "warmup_steps_10hz": 500,
+    "warmup_steps_50hz": 2500,
+    "source": "last 50 s of validation split",
+    "scored": false,
+    "guard": "assert n_scored == len(df_test)"
+  },
+
+  "horizons": {
+    "headline_physical_seconds": [0.1, 0.2, 0.5, 1.0],
+    "headline_steps_10hz": [1, 2, 5, 10],
+    "headline_steps_50hz": [5, 10, 25, 50],
+    "extended_max_steps_10hz": 100,
+    "extended_max_steps_50hz": 500,
+    "extended_max_physical_seconds": 10.0
+  },
+
+  "primary_target": "delta_x",
+  "secondary_target": "level_x",
+
+  "primary_metrics": [
+    "R2_dx",
+    "skill_dx",
+    "MAE_dx",
+    "RMSE_dx"
+  ],
+
+  "secondary_metrics": [
+    "R2_level",
+    "ACF1",
+    "NIS",
+    "cov90",
+    "LB_p20",
+    "grey_frac",
+    "grey_med"
+  ],
+
+  "metric_formulas": {
+    "R2_dx": {
+      "formula": "1 - SS_res / SS_tot",
+      "SS_res": "sum((dx_pred - dx_true)^2)",
+      "SS_tot": "sum((dx_true - mean(dx_true))^2)",
+      "baseline": "constant_mean_increment",
+      "guard": "if SS_tot < 1e-15 then R2_dx = 0.0"
+    },
+    "skill_dx": {
+      "formula": "1 - RMSE / RMSE_base",
+      "RMSE_base": "sqrt(Var(dx_true))",
+      "baseline": "constant_mean_increment",
+      "guard": "if RMSE_base < 1e-15 then skill = 0.0"
+    },
+    "NIS": {
+      "formula": "mean(e^2 / S)",
+      "expected": 1.0,
+      "guard": "S clamped to max(S, 1e-15)"
+    },
+    "ACF": {
+      "formula": "sum(e_c[t]*e_c[t+lag]) / (N * Var(e))",
+      "estimator": "biased",
+      "note": "denominator uses N, not N-lag"
+    },
+    "ljung_box": {
+      "formula": "N*(N+2) * sum(rho_hat(k)^2 / (N-k), k=1..m)",
+      "distribution": "chi2(m)",
+      "reported_lags": [5, 10, 20, 50]
+    },
+    "cov90": {
+      "formula": "mean(|e| <= z90 * sqrt(S))",
+      "z90": 1.6449,
+      "expected": 0.90,
+      "guard": "S clamped to max(S, 1e-15)"
+    }
+  },
+
+  "open_loop_prediction": {
+    "mode": "oracle",
+    "description": "Uses actual observed water velocity u(t) during open-loop rollout",
+    "kalman_update": false,
+    "starting_state": "post-update (filtered) state at origin t"
+  },
+
+  "event_detection": {
+    "algorithm": "kmeans_k2_hysteresis",
+    "initial_centroids": ["percentile_25", "percentile_75"],
+    "convergence_threshold": 1e-8,
+    "max_iterations": 100,
+    "min_persist": 3,
+    "event_radius_seconds": 10.0,
+    "event_radius_steps_10hz": 100,
+    "event_radius_steps_50hz": 500,
+    "subsets": ["full", "event", "nonevent"],
+    "nonevent_caveat": "R2_dx may be ill-conditioned when Var(dx_true) < 1e-6; always report MAE/RMSE"
+  },
+
+  "scoring": {
+    "min_samples_per_horizon": 10,
+    "nan_handling": "exclude NaN innovations from diagnostic metrics",
+    "ss_tot_floor": 1e-15,
+    "rmse_base_floor": 1e-15,
+    "S_floor": 1e-15
+  }
+}

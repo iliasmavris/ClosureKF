@@ -1,0 +1,44 @@
+{
+  "truth_params": {
+    "k_true": 0.0001,
+    "h_true": 0.0003,
+    "sigma_q": 0.005,
+    "R_true": 0.005,
+    "T0_init": 30.0,
+    "dt": 1800.0,
+    "N_days": 90.0
+  },
+  "forcing_params": {
+    "T_air_mean": 25.0,
+    "T_air_diurnal_amp": 3.0,
+    "T_air_synoptic_amp": 1.0,
+    "T_air_ou_tau": 10800.0,
+    "T_air_ou_sigma": 0.3,
+    "wind_ou_tau": 21600.0,
+    "wind_ou_sigma": 0.8,
+    "wind_mean_target": 1.5,
+    "wind_clip_min": 0.1,
+    "wind_clip_max": 3.0,
+    "par_peak": 1.0
+  },
+  "data_seed": 42,
+  "total_samples": 4320,
+  "n_train": 3024,
+  "n_val": 648,
+  "n_test": 648,
+  "forcing_stats": {
+    "T_air_mean": 24.985891210221556,
+    "T_air_std": 2.2379940038730317,
+    "wind_mean": 1.2100587558500844,
+    "wind_std": 0.6522780613529611,
+    "par_mean": 0.31785524350553207
+  },
+  "T_true_stats": {
+    "mean": 25.011854141002893,
+    "std": 2.2476471688488777,
+    "min": 20.17969620369778,
+    "max": 30.0
+  },
+  "euler_stability": 1.8,
+  "expected_k_s1": 0.0004630176267550253
+}

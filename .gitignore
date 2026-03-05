@@ -1,0 +1,57 @@
+# ============================================================
+# WHITELIST .gitignore for ClosureKF
+# Strategy: ignore everything at root, un-ignore what we want.
+# ============================================================
+
+# --- Ignore all root-level files and directories ---
+/*
+
+# --- Allow these root-level files ---
+!.gitignore
+!LICENSE
+!README.md
+!requirements_frozen.txt
+
+# --- Allow these directories (and all their contents) ---
+!models/
+!scripts/
+!utils/
+!processed_data_10hz_clean_v1/
+!cooling_benchmark/
+!external_benchmarks/
+!virtual_lab_v1/
+!neon_benchmark/
+!cfd_twin_v1/
+!ems_v1/
+
+# --- Within allowed directories, exclude large/unwanted items ---
+
+# Python build artifacts (everywhere)
+**/__pycache__/
+**/*.pyc
+
+# LaTeX build artifacts (everywhere)
+**/*.aux
+**/*.log
+**/*.blg
+**/*.out
+**/*.abs
+**/*.bbl
+**/texput.log
+**/nul
+
+# Virtual lab: scripts yes, generated datasets no
+virtual_lab_v1/datasets*/
+virtual_lab_v1/outputs/
+
+# Neon benchmark: scripts yes, downloaded data no
+neon_benchmark/data/
+
+# CFD twin: scripts yes, OpenFOAM case/outputs no
+cfd_twin_v1/case/
+cfd_twin_v1/outputs/
+
+# ems_v1: eval only, not old paper drafts or run outputs
+ems_v1/paper/
+ems_v1/runs/
+ems_v1/scouts/

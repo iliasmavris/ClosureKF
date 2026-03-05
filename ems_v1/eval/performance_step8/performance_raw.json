@@ -1,0 +1,148 @@
+{
+  "10hz_seeds": {
+    "1": {
+      "s1_sec": 7789.0,
+      "s2_sec": 295.0,
+      "total_sec": 8088
+    },
+    "2": {
+      "s1_sec": 8989.0,
+      "s2_sec": 645.0,
+      "total_sec": 9639
+    },
+    "3": {
+      "s1_sec": 6300.0,
+      "s2_sec": 728.0,
+      "total_sec": 7033
+    }
+  },
+  "50hz": {
+    "s1_sec": 101570.0,
+    "s2_sec": 14125.0,
+    "eval_sec": 43,
+    "total_sec": 115695.0
+  },
+  "filter_repeats": [
+    0.041364,
+    0.040669,
+    0.041049,
+    0.041421,
+    0.040719
+  ],
+  "forecast_repeats": [
+    0.078523,
+    0.076833,
+    0.077004,
+    0.078181,
+    0.078003
+  ],
+  "params_s1": [
+    [
+      "alpha_raw",
+      1
+    ],
+    [
+      "c",
+      1
+    ],
+    [
+      "vc_raw",
+      1
+    ],
+    [
+      "kappa_raw",
+      1
+    ],
+    [
+      "log_qx",
+      1
+    ],
+    [
+      "log_qu",
+      1
+    ],
+    [
+      "log_r",
+      1
+    ],
+    [
+      "log_p0_xx",
+      1
+    ],
+    [
+      "log_p0_uu",
+      1
+    ]
+  ],
+  "params_s2": [
+    [
+      "alpha_raw",
+      1
+    ],
+    [
+      "c_raw",
+      1
+    ],
+    [
+      "kappa_raw",
+      1
+    ],
+    [
+      "vc_raw",
+      1
+    ],
+    [
+      "log_qx",
+      1
+    ],
+    [
+      "log_qu",
+      1
+    ],
+    [
+      "log_r",
+      1
+    ],
+    [
+      "log_q_scale",
+      1
+    ],
+    [
+      "log_p0_xx",
+      1
+    ],
+    [
+      "log_p0_uu",
+      1
+    ],
+    [
+      "a1_raw",
+      1
+    ],
+    [
+      "d1_raw",
+      1
+    ],
+    [
+      "d2_raw",
+      1
+    ],
+    [
+      "d3_raw",
+      1
+    ],
+    [
+      "b1",
+      1
+    ],
+    [
+      "b2",
+      1
+    ]
+  ],
+  "hardware": {
+    "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "os": "Windows 10 (10.0.26200)",
+    "python": "3.11.9"
+  }
+}

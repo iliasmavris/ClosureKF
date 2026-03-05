@@ -1,0 +1,40 @@
+{
+  "step1_prepare": {
+    "output_csv": "C:\\Users\\Workstation 2\\Desktop\\2026 research\\full code old  state space claude code\\external_benchmarks\\silverbox\\data\\processed\\silverbox_processed.csv",
+    "sha256": "1e47cba94a01094252c3713cfc99b8bc177e3b4ab8fe35511c59d12b53bfda21",
+    "dt_eff": 0.09994265585319899,
+    "downsample_factor": 61,
+    "native_sampling_time": 0.0016384041943147375,
+    "dc_offset": 0.0009115499618203821,
+    "n_raw": 65062,
+    "n_downsampled": 1067,
+    "timestamp": "2026-02-20 20:33:44"
+  },
+  "step2_splits": {
+    "train_csv": "C:\\Users\\Workstation 2\\Desktop\\2026 research\\full code old  state space claude code\\external_benchmarks\\silverbox\\data\\splits\\train.csv",
+    "val_csv": "C:\\Users\\Workstation 2\\Desktop\\2026 research\\full code old  state space claude code\\external_benchmarks\\silverbox\\data\\splits\\val.csv",
+    "test_csv": "C:\\Users\\Workstation 2\\Desktop\\2026 research\\full code old  state space claude code\\external_benchmarks\\silverbox\\data\\splits\\test.csv",
+    "n_train": 746,
+    "n_val": 160,
+    "n_test": 161,
+    "train_frac": 0.7,
+    "val_frac": 0.15,
+    "test_frac": 0.15,
+    "sha256": {
+      "train": "58f7376800bb9a01f08ced1c518258e2441a4271f9b6ef2b2c26f0ee1bef3fc7",
+      "val": "c7ceea2433354577af3f628c49287b44142fac900dc92de75d45582920da48e5",
+      "test": "0d6edd474a3216182af660e5f4229eb4a75646e8d0f7c22d989989ae86092a81"
+    },
+    "timestamp": "2026-02-20 20:34:30"
+  },
+  "output_hashes": {
+    "metrics.json": "8e96fc7731b8acd0f3693817a99b1ad0f0ea19cba23906e9cac4275264a72a95",
+    "selection_summary.json": "ab959d7565b9445c49356787ea4a50b88a6adce4d9849ecbc706282eab23b511",
+    "innovation_diagnostics.json": "9c3d57ddec293cb40eee8d5867e4fa9d62d1e810e98ada75e122e904eb479167",
+    "fig_ext_silverbox_summary.pdf": "a8c9fb36b65b7e44111674e395099f7c2d500a9d35403e1843c61e0616c75ad6",
+    "fig_ext_silverbox_summary.png": "6fec87dbf38ac1c9b8b0f3ebb47613f4e31202073b896e1c4586b8f8dd02bd30",
+    "gate_off_vs_on.json": "970216953a2fbe7b035e06d87889cf38d96765b386e4daf124c41dd5d51574bd",
+    "fig_ext_silverbox_summary_v2.pdf": "1a1fe417ac78505bf9831228de7da7dbe90bcc65c06d9ff987caa6c234f5de1c",
+    "fig_ext_silverbox_summary_v2.png": "4dc95953c9ce068758bc87cb87185cd77eedc4f6084ddbece4b801239fa12261"
+  }
+}

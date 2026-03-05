@@ -1,0 +1,38 @@
+{
+  "rate_hz": 10.0,
+  "dt": 0.1,
+  "method": "1. Estimate raw sampling rate from median(diff(timestamp)).\n2. Apply 4th-order Butterworth lowpass at 4.0 Hz (0.8 x Nyquist = 0.8 x 5.0 Hz) using sosfiltfilt.\n3. Interpolate to uniform 10.0 Hz grid (dt = 0.1000s) via np.interp.\n4. Each split processed independently from its own source file.",
+  "generated": "2026-02-15 10:25:34",
+  "splits": {
+    "train": {
+      "file": "train_10hz_ready.csv",
+      "rows": 12609,
+      "t_min": 0.0,
+      "t_max": 1260.8000000000002,
+      "duration_s": 1260.8000000000002,
+      "fs_raw_estimated": 412.71151464757924,
+      "sha256": "75e44f18b644d36a3b0f6887328ca0e5b38370a281b8f2317a496adad6cdd614",
+      "size_bytes": 708007
+    },
+    "val": {
+      "file": "val_10hz_ready.csv",
+      "rows": 2661,
+      "t_min": 1260.8077,
+      "t_max": 1526.8076999997581,
+      "duration_s": 265.9999999997581,
+      "fs_raw_estimated": 419.8152812942606,
+      "sha256": "d30098bbb404726c74bc977b001c01178ad8fcdaf64ad054d741dcc1e8c27516",
+      "size_bytes": 171724
+    },
+    "test": {
+      "file": "test_10hz_ready.csv",
+      "rows": 2727,
+      "t_min": 1526.821097,
+      "t_max": 1799.421096999752,
+      "duration_s": 272.5999999997521,
+      "fs_raw_estimated": 409.16530278758387,
+      "sha256": "aa9ac683bad97699cf96a7751164225670b2d671fb1f3593eeea0159bced3711",
+      "size_bytes": 175834
+    }
+  }
+}

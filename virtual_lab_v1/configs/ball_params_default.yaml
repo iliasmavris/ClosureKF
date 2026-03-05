@@ -1,0 +1,56 @@
+sphere:
+  d_p: 0.03           # diameter [m] (3cm gravel)
+  rho_p: 2650.0        # particle density [kg/m^3]
+  rho_f: 1000.0        # fluid density [kg/m^3]
+
+drag:
+  model: "blended"     # "blended" (Stokes+form, default) or "schiller_naumann"
+  C_Dinf: 0.47         # form drag coefficient (blended model)
+  C_D_const: 0.44      # fixed C_D (schiller_naumann fallback)
+
+added_mass:
+  C_Du: 1.0            # added-mass coefficient multiplier
+  C_m: 0.5             # theoretical added mass (sphere)
+
+friction:
+  mu_s: 0.05           # static friction coefficient (tuned for d_p=0.03)
+  mu_k: 0.03           # kinetic friction coefficient (tuned for d_p=0.03)
+  eps_v: 1.0e-4        # stick-slip regularisation velocity [m/s]
+
+pin:
+  x_pin: 0.0            # resting (pin) position [m]
+  eps_x: 0.003           # capture radius around pin [m]
+  sigma_x: 0.0003        # pin jitter OU intensity [m] (0.3 mm)
+  tau_x: 0.02            # pin jitter OU correlation time [s] -> corner at 8 Hz, above 4 Hz LP
+
+pin_hold:
+  F_pin: 0.0             # extra holding force at pin [N] (optional)
+
+damping:
+  c_r: 0.0             # linear damping coefficient [N s/m]
+
+restoring:
+  k_spring: 20.0        # spring stiffness [N/m] (bed-pocket restoring, scaled with d_p^3)
+  x_eq: 0.0            # equilibrium position [m] (= x_pin)
+
+noise:
+  sigma_a: 0.005       # OU noise intensity [m/s^2]
+  tau_eta: 1.0          # OU correlation time [s]
+
+integration:
+  dt_sim: 0.005        # simulation time step [s] (matches OF dt)
+  t_start: 0.0         # start time [s]
+  t_end: 540.0         # end time [s]
+  spinup_discard: 30.0 # discard first N seconds for analysis
+
+flow:
+  probe_channel: "u_y010"   # which probe height to use as u_b(t)
+  du_smooth_hz: 8.0         # lowpass cutoff for du/dt computation [Hz]
+  du_smooth_order: 4        # Butterworth order for du/dt smoothing
+
+measurement:
+  R_obs: 1.0e-7        # observation noise variance (for downstream EKF)
+
+constants:
+  g: 9.81              # gravitational acceleration [m/s^2]
+  nu: 1.0e-6           # kinematic viscosity [m^2/s]

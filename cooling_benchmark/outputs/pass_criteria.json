@@ -1,0 +1,138 @@
+{
+  "P1_forced_conv_selected": {
+    "count": 3,
+    "total": 3,
+    "pass": true
+  },
+  "P2_no_distractor_terms": {
+    "false_positives": [],
+    "pass": true
+  },
+  "P3_coefficient_recovery": {
+    "h_true": -0.0003,
+    "discovered": [
+      -0.0002940957201644778,
+      -0.00029328465461730957,
+      -0.0002948000328615308
+    ],
+    "rel_errors": [
+      0.01968093278507383,
+      0.022384484608968015,
+      0.017333223794897313
+    ],
+    "pass": true
+  },
+  "P4_closure_improves": {
+    "details": [
+      {
+        "seed": 1,
+        "horizon": "2.0h",
+        "physics": 0.9457309199072861,
+        "closure": 0.9618227377484684,
+        "closure_better": true
+      },
+      {
+        "seed": 1,
+        "horizon": "6.0h",
+        "physics": 0.9917837526918736,
+        "closure": 0.9941965623017033,
+        "closure_better": true
+      },
+      {
+        "seed": 1,
+        "horizon": "12.0h",
+        "physics": 0.9958852386925899,
+        "closure": 0.997074332019816,
+        "closure_better": true
+      },
+      {
+        "seed": 1,
+        "horizon": "24.0h",
+        "physics": 0.916319890151861,
+        "closure": 0.94055481373066,
+        "closure_better": true
+      },
+      {
+        "seed": 2,
+        "horizon": "2.0h",
+        "physics": 0.9457620666870379,
+        "closure": 0.9619351346930731,
+        "closure_better": true
+      },
+      {
+        "seed": 2,
+        "horizon": "6.0h",
+        "physics": 0.9917885915428308,
+        "closure": 0.994215787349798,
+        "closure_better": true
+      },
+      {
+        "seed": 2,
+        "horizon": "12.0h",
+        "physics": 0.9958879079579526,
+        "closure": 0.9970836636378165,
+        "closure_better": true
+      },
+      {
+        "seed": 2,
+        "horizon": "24.0h",
+        "physics": 0.9163758577528353,
+        "closure": 0.940757220268052,
+        "closure_better": true
+      },
+      {
+        "seed": 3,
+        "horizon": "2.0h",
+        "physics": 0.9456577749875739,
+        "closure": 0.9616377370548017,
+        "closure_better": true
+      },
+      {
+        "seed": 3,
+        "horizon": "6.0h",
+        "physics": 0.9917723516440797,
+        "closure": 0.9941676799178301,
+        "closure_better": true
+      },
+      {
+        "seed": 3,
+        "horizon": "12.0h",
+        "physics": 0.9958789626409044,
+        "closure": 0.9970620517570342,
+        "closure_better": true
+      },
+      {
+        "seed": 3,
+        "horizon": "24.0h",
+        "physics": 0.9161883741234391,
+        "closure": 0.9402842813112687,
+        "closure_better": true
+      }
+    ],
+    "pass": true
+  },
+  "P5_acf_acceptable": {
+    "details": [
+      {
+        "seed": 1,
+        "physics_acf1": -0.027222797117386788,
+        "closure_acf1": -0.017098770010748242,
+        "improved": true
+      },
+      {
+        "seed": 2,
+        "physics_acf1": -0.026479091787514022,
+        "closure_acf1": -0.019179532889727912,
+        "improved": true
+      },
+      {
+        "seed": 3,
+        "physics_acf1": -0.029624208830438613,
+        "closure_acf1": -0.013131490181093898,
+        "improved": true
+      }
+    ],
+    "pass": true
+  },
+  "overall_pass": true
+}

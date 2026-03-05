@@ -1,0 +1,25 @@
+\begin{table}[htbp]
+  \centering
+  \caption{Model class comparison: displacement-increment skill
+           ($\dxRsq$) on the 10\,Hz test set at four horizons.
+           At the headline 1\,s horizon, the grey-box ($d_2$-only
+           closure) outperforms all data-only baselines while remaining
+           fully interpretable.  Data-only models excel at short
+           horizons by exploiting temporal autocorrelation but degrade
+           at longer horizons where physics structure prevents drift.}
+  \label{tab:baseline_comparison}
+  \begin{tabular}{llrrrrrrr}
+    \toprule
+    Model & Type & Params & $\dxRsq_{0.1}$ & $\dxRsq_{0.2}$ & $\dxRsq_{0.5}$ & $\dxRsq_{1.0}$ & Skill$_{1.0}$ & MAE$_{1.0}$ \\
+    \midrule
+    Persistence & baseline & 0 & $-0.000$ & $-0.000$ & $-0.000$ & $-0.000$ & $-0.000$ & $0.0487$ \\
+    Climatology & baseline & 1/h & $-0.000$ & $-0.000$ & $-0.000$ & $-0.000$ & $-0.000$ & $0.0487$ \\
+    AR(10) & linear & 10 & $+0.423$ & $+0.217$ & $+0.060$ & $+0.027$ & $+0.013$ & $0.0493$ \\
+    Ridge & linear & ~27 & $+0.443$ & $+0.250$ & $+0.096$ & $+0.092$ & $+0.047$ & $0.0636$ \\
+    MLP & nonlinear & ~1441 & $+0.515$ & $+0.337$ & $-0.095$ & $-0.013$ & $-0.006$ & $0.0691$ \\
+    GradBoost & nonlinear & depth=3, iter=100 & $+0.671$ & $+0.587$ & $+0.316$ & $+0.052$ & $+0.026$ & $0.0620$ \\
+    \midrule
+    Grey-box ($d_2$) & grey-box & 6+1 & $+0.044$ & $+0.057$ & $+0.101$ & $+0.176$ & $+0.092$ & $0.0654$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}

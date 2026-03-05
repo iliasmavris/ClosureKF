@@ -1,0 +1,44 @@
+{
+  "dt_eff": 0.09994265585319899,
+  "downsample_factor": 61,
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "stage1": {
+    "L": 64,
+    "H": 20,
+    "batch": 64,
+    "epochs": 100,
+    "lr": 0.01,
+    "patience": 20,
+    "sched": 10
+  },
+  "stage2": {
+    "L": 64,
+    "H": 20,
+    "batch": 128,
+    "epochs": 200,
+    "lr": 0.01,
+    "patience": 30,
+    "sched": 10
+  },
+  "gate": {
+    "tau_nll": 0.001,
+    "rel_var_threshold": 0.05,
+    "tolerance_dxr2": 0.005
+  },
+  "refit": {
+    "max_epochs": 200,
+    "patience": 30
+  },
+  "warmup_sec": 50.0,
+  "horizon_targets_sec": [
+    0.1,
+    0.2,
+    0.5,
+    1.0,
+    2.0
+  ]
+}

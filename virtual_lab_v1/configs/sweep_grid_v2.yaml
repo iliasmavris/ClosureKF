@@ -1,0 +1,47 @@
+# Phase 3 sweep grid: 12 forcing variants x 2 seeds = 24 conditions
+# ER target: [0.05, 0.40] via mu_s full-run auto-tune
+#
+# Physics jitters (lognormal):
+#   k_spring:  sigma_log = 0.12  (+-12%)
+#   mu_k:      sigma_log = 0.05  (+-5%)
+#   d_p:       disabled  (too much ER variability)
+#
+# Base mu_s is set to 0.05 (scaled for d_p=0.03); auto-tune runs FULL
+# simulation each iteration for reliable ER estimation.
+# Seeds start at 200 to avoid overlap with Phase 2 (100-107).
+
+jitter:
+  enabled: true
+  k_spring:
+    sigma_log: 0.12
+  mu_k:
+    sigma_log: 0.05
+
+autotune:
+  target_er_low: 0.05
+  target_er_high: 0.40
+  mu_s_step: 0.01
+  mu_s_clamp: [0.005, 0.20]
+  max_iter: 15
+  mode: "full_run"       # run full simulation each iteration (reliable)
+
+base_mu_s: 0.05
+
+# 12 forcing variants x 2 seeds = 24 conditions
+# Mild forcing perturbations to avoid degenerate high-ER conditions
+forcing_variants:
+  - "baseline"
+  - "scale_093"
+  - "scale_097"
+  - "scale_103"
+  - "scale_107"
+  - "scale_112"
+  - "am_a010_tau3"
+  - "am_a015_tau4"
+  - "am_a020_tau2"
+  - "am_a020_tau6"
+  - "scale097_am010_tau3"
+  - "scale103_am010_tau4"
+
+seeds_per_variant: 2
+seed_base: 200

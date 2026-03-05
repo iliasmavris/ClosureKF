@@ -1,0 +1,7 @@
+{
+  "term_dropped": "par_quad",
+  "full_nll": 7.690867199617274,
+  "refit_nll": 7.690867339863496,
+  "delta_nll": 1.402462226351986e-07,
+  "passed": false
+}

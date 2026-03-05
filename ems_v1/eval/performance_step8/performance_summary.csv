@@ -1,0 +1,12 @@
+item,value,unit,source
+train_s1_mean_sec,7692.666666666667,s,progress.log parse
+train_s2_mean_sec,556.0,s,progress.log parse
+train_total_mean_sec,8253.333333333334,s,progress.log parse
+train_total_50hz_sec,115695.0,s,progress.log parse
+infer_filter_sec,0.041,s,benchmark median of 5
+infer_filter_ms_per_step,0.0127,ms,derived
+infer_forecast_sec,0.078,s,benchmark median of 5
+n_params_s1,9.0,count,state_dict
+n_params_s2_trainable,2.0,count,d2_raw + log_q_scale
+ckpt_bytes_s1,3621.0,bytes,file size
+ckpt_bytes_s2,5738.0,bytes,file size

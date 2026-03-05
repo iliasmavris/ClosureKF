@@ -1,0 +1,24 @@
+{
+  "nll_mle": -0.9100697636604309,
+  "chi2_threshold": 1.92,
+  "d2": {
+    "mle": 2.124509120947592,
+    "mle_raw": 1.9972532987594604,
+    "profile_ci95_lo": 0.6917747729853422,
+    "profile_ci95_hi": 4.015452696108305
+  },
+  "q_scale": {
+    "mle": 1.0109487780017876,
+    "mle_raw": 0.010889274068176746,
+    "profile_ci95_lo": 0.13681703920857943,
+    "profile_ci95_hi": 7.4699572338005975
+  },
+  "grid_settings": {
+    "n_grid": 101,
+    "d2_raw_half_range": 2.0,
+    "qs_raw_half_range": 2.0,
+    "n_windows": 256
+  },
+  "checkpoint": "C:\\Users\\Workstation 2\\Desktop\\2026 research\\full code old  state space claude code\\ems_v1\\runs\\lockbox_ems_v1_d2only_10hz_3seed\\seed1\\checkpoints\\closure_d2only_seed1.pth",
+  "seed": 1
+}

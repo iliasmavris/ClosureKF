@@ -1,0 +1,140 @@
+{
+  "seed1": {
+    "seed": 1,
+    "full_closure": {
+      "par_lin": -7.230409210023936e-06,
+      "par_quad": 9.112399311561603e-06,
+      "wind_cool": -3.4717832022579387e-06,
+      "sensible": 0.00029191645444370806,
+      "forced_conv": -0.0002940957201644778,
+      "q_scale": 0.5738734006881714
+    },
+    "rel_variance": {
+      "relative": {
+        "par_lin": 0.00019726966422414706,
+        "par_quad": 0.0002628667715693894,
+        "wind_cool": 8.934504870270282e-05,
+        "sensible": 0.6059404049241103,
+        "forced_conv": 0.39351011359139343
+      },
+      "absolute": {
+        "par_lin": 2.5224757337127812e-05,
+        "par_quad": 3.361262133694254e-05,
+        "wind_cool": 1.1424499462009408e-05,
+        "sensible": 0.07748124748468399,
+        "forced_conv": 0.0503179095685482
+      }
+    },
+    "dnll_gate": {
+      "sensible": {
+        "refit_nll": 0.2683786669642561,
+        "delta_nll": 0.30885923058829373,
+        "passed_gate": true,
+        "best_epoch": 89
+      },
+      "forced_conv": {
+        "refit_nll": 0.23993421273512971,
+        "delta_nll": 0.28041477635916734,
+        "passed_gate": true,
+        "best_epoch": 15
+      }
+    },
+    "final_terms": [
+      "sensible",
+      "forced_conv"
+    ],
+    "full_nll": -0.04048056362403764
+  },
+  "seed2": {
+    "seed": 2,
+    "full_closure": {
+      "par_lin": -7.138623914215714e-06,
+      "par_quad": 5.918691385886632e-06,
+      "wind_cool": -2.6981585961038945e-06,
+      "sensible": 0.00029169328627176583,
+      "forced_conv": -0.00029328465461730957,
+      "q_scale": 0.5870216488838196
+    },
+    "rel_variance": {
+      "relative": {
+        "par_lin": 0.00019354141135403594,
+        "par_quad": 0.0001116174069877094,
+        "wind_cool": 5.431385131701162e-05,
+        "sensible": 0.6064954704311565,
+        "forced_conv": 0.39314505689918483
+      },
+      "absolute": {
+        "par_lin": 2.4588398446212523e-05,
+        "par_quad": 1.4180393009155523e-05,
+        "wind_cool": 6.900283551658504e-06,
+        "sensible": 0.07705199718475342,
+        "forced_conv": 0.049946971237659454
+      }
+    },
+    "dnll_gate": {
+      "sensible": {
+        "refit_nll": 0.2689346143354972,
+        "delta_nll": 0.3091243760815511,
+        "passed_gate": true,
+        "best_epoch": 85
+      },
+      "forced_conv": {
+        "refit_nll": 0.23950723049023914,
+        "delta_nll": 0.279696992236293,
+        "passed_gate": true,
+        "best_epoch": 13
+      }
+    },
+    "final_terms": [
+      "sensible",
+      "forced_conv"
+    ],
+    "full_nll": -0.0401897617460539
+  },
+  "seed3": {
+    "seed": 3,
+    "full_closure": {
+      "par_lin": -1.9834560589515604e-06,
+      "par_quad": 5.05598973177257e-06,
+      "wind_cool": -5.856828465766739e-06,
+      "sensible": 0.00028999536880292,
+      "forced_conv": -0.0002948000328615308,
+      "q_scale": 0.569247305393219
+    },
+    "rel_variance": {
+      "relative": {
+        "par_lin": 1.4976808016028015e-05,
+        "par_quad": 8.164359312317596e-05,
+        "wind_cool": 0.00025652507103694506,
+        "sensible": 0.6010681044336492,
+        "forced_conv": 0.3985787500941746
+      },
+      "absolute": {
+        "par_lin": 1.8982194660566165e-06,
+        "par_quad": 1.0347829629608896e-05,
+        "wind_cool": 3.2512994948774576e-05,
+        "sensible": 0.07618173211812973,
+        "forced_conv": 0.05051743611693382
+      }
+    },
+    "dnll_gate": {
+      "sensible": {
+        "refit_nll": 0.2686775180304216,
+        "delta_nll": 0.30890965663517517,
+        "passed_gate": true,
+        "best_epoch": 65
+      },
+      "forced_conv": {
+        "refit_nll": 0.24314653345694145,
+        "delta_nll": 0.283378672061695,
+        "passed_gate": true,
+        "best_epoch": 24
+      }
+    },
+    "final_terms": [
+      "sensible",
+      "forced_conv"
+    ],
+    "full_nll": -0.040232138604753546
+  }
+}

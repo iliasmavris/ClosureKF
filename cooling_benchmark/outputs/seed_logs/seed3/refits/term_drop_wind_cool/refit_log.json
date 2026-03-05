@@ -1,0 +1,7 @@
+{
+  "term_dropped": "wind_cool",
+  "full_nll": 1.1497810151841905,
+  "refit_nll": 0.26160262690650093,
+  "delta_nll": -0.8881783882776896,
+  "passed": false
+}

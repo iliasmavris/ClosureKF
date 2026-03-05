@@ -1,0 +1,18 @@
+{
+  "script": "make_figure_v2.py",
+  "timestamp": "2026-03-01 17:09:43",
+  "input_files": {
+    "metrics": "C:\\Users\\Workstation 2\\Desktop\\2026 research\\full code old  state space claude code\\external_benchmarks\\silverbox\\outputs\\metrics.json",
+    "metrics_sha256": "8e96fc7731b8acd0f3693817a99b1ad0f0ea19cba23906e9cac4275264a72a95",
+    "selection": "C:\\Users\\Workstation 2\\Desktop\\2026 research\\full code old  state space claude code\\external_benchmarks\\silverbox\\outputs\\selection_summary.json",
+    "selection_sha256": "ab959d7565b9445c49356787ea4a50b88a6adce4d9849ecbc706282eab23b511",
+    "gate_comparison": "C:\\Users\\Workstation 2\\Desktop\\2026 research\\full code old  state space claude code\\external_benchmarks\\silverbox\\outputs\\gate_off_vs_on.json",
+    "gate_comparison_sha256": "970216953a2fbe7b035e06d87889cf38d96765b386e4daf124c41dd5d51574bd"
+  },
+  "environment": {
+    "python": "3.11.9",
+    "numpy": "1.26.4",
+    "pandas": "2.0.0",
+    "matplotlib": "3.10.1"
+  }
+}

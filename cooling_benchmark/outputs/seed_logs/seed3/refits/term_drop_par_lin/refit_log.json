@@ -1,0 +1,7 @@
+{
+  "term_dropped": "par_lin",
+  "full_nll": 1.1497810151841905,
+  "refit_nll": 1.3353504339853923,
+  "delta_nll": 0.1855694188012018,
+  "passed": true
+}

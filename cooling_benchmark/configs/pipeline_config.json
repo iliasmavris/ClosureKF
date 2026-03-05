@@ -1,0 +1,27 @@
+{
+  "system_name": "Synthetic Forced Convection Cooling",
+  "description": "Positive-control benchmark: physics floor is Newton's cooling, known closure is wind*(T-T_air)",
+  "dt_seconds": 1800,
+  "seeds": [1, 2, 3],
+  "stage1": {
+    "epochs": 200,
+    "patience": 30,
+    "lr": 0.01,
+    "sched_patience": 10
+  },
+  "stage2": {
+    "epochs": 150,
+    "patience": 30,
+    "lr": 0.001,
+    "sched_patience": 10
+  },
+  "gate": {
+    "tau_nll": 0.001,
+    "rel_var_threshold": 0.05
+  },
+  "refit": {
+    "max_epochs": 100,
+    "patience": 20
+  },
+  "horizon_targets_hours": [0.5, 1.0, 2.0, 6.0, 12.0, 24.0]
+}

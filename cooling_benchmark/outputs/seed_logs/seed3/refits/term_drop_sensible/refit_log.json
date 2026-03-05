@@ -1,0 +1,7 @@
+{
+  "term_dropped": "sensible",
+  "full_nll": -0.040232138604753546,
+  "refit_nll": 0.2686775180304216,
+  "delta_nll": 0.30890965663517517,
+  "passed": true
+}

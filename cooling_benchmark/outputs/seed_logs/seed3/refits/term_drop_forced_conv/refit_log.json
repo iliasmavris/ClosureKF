@@ -1,0 +1,7 @@
+{
+  "term_dropped": "forced_conv",
+  "full_nll": -0.040232138604753546,
+  "refit_nll": 0.24314653345694145,
+  "delta_nll": 0.283378672061695,
+  "passed": true
+}

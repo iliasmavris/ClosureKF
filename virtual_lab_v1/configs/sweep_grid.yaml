@@ -1,0 +1,59 @@
+# 8-condition sweep grid: 2 x 2 x 2 = 8 conditions
+# Each condition overrides ball_params_default.yaml via dot-notation keys
+
+conditions:
+  - id: "condition_000"
+    seed: 100
+    overrides:
+      friction.mu_s: 0.55
+      friction.mu_k: 0.40
+      added_mass.C_Du: 0.8
+
+  - id: "condition_001"
+    seed: 101
+    overrides:
+      friction.mu_s: 0.55
+      friction.mu_k: 0.40
+      added_mass.C_Du: 1.2
+
+  - id: "condition_002"
+    seed: 102
+    overrides:
+      friction.mu_s: 0.55
+      friction.mu_k: 0.50
+      added_mass.C_Du: 0.8
+
+  - id: "condition_003"
+    seed: 103
+    overrides:
+      friction.mu_s: 0.55
+      friction.mu_k: 0.50
+      added_mass.C_Du: 1.2
+
+  - id: "condition_004"
+    seed: 104
+    overrides:
+      friction.mu_s: 0.65
+      friction.mu_k: 0.40
+      added_mass.C_Du: 0.8
+
+  - id: "condition_005"
+    seed: 105
+    overrides:
+      friction.mu_s: 0.65
+      friction.mu_k: 0.40
+      added_mass.C_Du: 1.2
+
+  - id: "condition_006"
+    seed: 106
+    overrides:
+      friction.mu_s: 0.65
+      friction.mu_k: 0.50
+      added_mass.C_Du: 0.8
+
+  - id: "condition_007"
+    seed: 107
+    overrides:
+      friction.mu_s: 0.65
+      friction.mu_k: 0.50
+      added_mass.C_Du: 1.2

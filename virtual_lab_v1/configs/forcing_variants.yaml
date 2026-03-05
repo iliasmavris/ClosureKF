@@ -1,0 +1,74 @@
+# Forcing variant definitions for Phase 3 sweep
+# Each variant transforms baseline u_b(t) from a single OF probe channel.
+#
+# Types:
+#   - "identity": u'(t) = u(t)  (baseline, no transform)
+#   - "scale":    u'(t) = s * u(t)
+#   - "am_ou":    u'(t) = e(t) * u(t), where e(t) = clip(1 + a*z(t), e_min, e_max)
+#                 z(t): zero-mean unit-std OU with timescale tau_env
+#                 e(t) is renormalized to mean 1 after clipping
+#   - "scale_am": combined scale + AM-OU  (applied sequentially: scale first, then AM)
+
+# Global AM-OU clip bounds
+am_clip_min: 0.6
+am_clip_max: 1.6
+
+variants:
+  # --- Baseline (identity) ---
+  - id: "baseline"
+    type: "identity"
+
+  # --- Scale variants (5%, 10% perturbations) ---
+  - id: "scale_093"
+    type: "scale"
+    scale: 0.93
+
+  - id: "scale_097"
+    type: "scale"
+    scale: 0.97
+
+  - id: "scale_103"
+    type: "scale"
+    scale: 1.03
+
+  - id: "scale_107"
+    type: "scale"
+    scale: 1.07
+
+  - id: "scale_112"
+    type: "scale"
+    scale: 1.12
+
+  # --- Mild AM-OU variants ---
+  - id: "am_a010_tau3"
+    type: "am_ou"
+    am_amplitude: 0.10
+    tau_env: 3.0
+
+  - id: "am_a015_tau4"
+    type: "am_ou"
+    am_amplitude: 0.15
+    tau_env: 4.0
+
+  - id: "am_a020_tau2"
+    type: "am_ou"
+    am_amplitude: 0.20
+    tau_env: 2.0
+
+  - id: "am_a020_tau6"
+    type: "am_ou"
+    am_amplitude: 0.20
+    tau_env: 6.0
+
+  # --- Mild combined scale + AM-OU ---
+  - id: "scale097_am010_tau3"
+    type: "scale_am"
+    scale: 0.97
+    am_amplitude: 0.10
+    tau_env: 3.0
+
+  - id: "scale103_am010_tau4"
+    type: "scale_am"
+    scale: 1.03
+    am_amplitude: 0.10
+    tau_env: 4.0

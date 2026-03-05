@@ -1,0 +1,75 @@
+{
+  "_comment": "Model selection config for EM&S. Freeze #2, 2026-02-16.",
+  "_companion": "ems_v1/meta/MODEL_SELECTION_FREEZE_2.md",
+
+  "final_model": "physics + d2_only",
+
+  "closure_terms": ["d2_v_abs_u"],
+  "closure_equation": "-d2 * v * |u|",
+  "closure_units": {
+    "d2": "m^{-1}",
+    "C": "m/s^2 (acceleration, multiplied by dt in discrete update)"
+  },
+
+  "candidate_terms_tested": ["b2_du", "d2_v_abs_u"],
+  "candidate_equation_2t": "b2 * du - d2 * v * |u|",
+  "full_library_5t": [
+    "a1_v (linear damping)",
+    "b1_u (direct flow coupling)",
+    "b2_du (velocity-change coupling)",
+    "d1_v2 (quadratic drag)",
+    "d2_v_abs_u (cross-drag)",
+    "d3_v_abs_v (self-drag)"
+  ],
+
+  "why_b2_removed": "Forecast-irrelevant: b2-only DxR2@1s = 0.171 vs closure-off = 0.180; filter-fit metrics unchanged (delta ACF1 < 0.005). High-frequency du cancels over multi-step horizons.",
+  "b2_kept_as": "Discovery/diagnostic result demonstrating magnitude-importance decoupling; reported in main text and SI.",
+  "reduction_path": "5t -> 2t (tolerance rule, |delta DxR2@10| <= 0.005) -> 1t (operational ablation, b2 inert)",
+
+  "primary_rate": "10hz_clean_v1",
+  "data_path": "processed_data_10hz_clean_v1",
+  "transfer_check": "50hz_clean_v1 (zero-shot, transfer ratio 0.994)",
+
+  "checkpoints": {
+    "source": "ems_v1/runs/lockbox_v11_1_alpha_fix_FREEZE",
+    "stage1": "seed{1,2,3}/checkpoints/stage1_physics_seed{1,2,3}.pth",
+    "stage2": "seed{1,2,3}/checkpoints/closure_2t_seed{1,2,3}.pth",
+    "note": "Stage 2 checkpoints contain b2+d2; set b2=0 at inference for final model"
+  },
+
+  "learned_params_seed1": {
+    "alpha": 1.716,
+    "tau_s": 0.583,
+    "kappa": 1.469,
+    "c": 25.12,
+    "uc": 0.190,
+    "d2": 2.32,
+    "b2_trained_but_pruned": 14.57,
+    "q_scale": 0.952
+  },
+
+  "metrics_primary": [
+    "R2_dx(h)",
+    "skill_dx(h)",
+    "MAE_dx(h)",
+    "RMSE_dx(h)",
+    "ACF(1)",
+    "NIS",
+    "cov90"
+  ],
+
+  "notation": {
+    "x": "observed particle displacement (m)",
+    "v": "latent particle velocity (m/s) -- model state",
+    "u": "water/flow velocity (m/s) -- exogenous input",
+    "du": "u_t - u_{t-1} (m/s, one-step water velocity change, NOT divided by dt)",
+    "convention": "manuscript notation (v=particle, u=water); code is inverted (u=particle, v=water)"
+  },
+
+  "seeds": [1, 2, 3],
+  "primary_seed": 1,
+
+  "alpha_parameterization": "softplus (unbounded > 0)",
+  "d2_constraint": "softplus (non-negative)",
+  "b2_constraint": "unconstrained (free sign)"
+}
